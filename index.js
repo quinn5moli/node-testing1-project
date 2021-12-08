@@ -92,6 +92,8 @@ class Seasons {
    */
   constructor() {
     // ✨ initialize whatever properties are needed
+    this.order = ["spring", "summer", "fall", "winter"], 
+    this.current = 0
   }
 
   /**
@@ -108,6 +110,13 @@ class Seasons {
    */
   next() {
     // ✨ implement
+    if(this.current === 3) {
+      this.current = 0
+    } else {
+      this.current++
+    }
+
+    return this.order[this.current]
   }
 }
 
