@@ -1,19 +1,40 @@
 const utils = require('./index')
 
 describe('[Exercise 1] trimProperties', () => {
-  test('[1] returns an object with the properties trimmed', () => {
+  it('[1] returns an object with the properties trimmed', () => {
     // EXAMPLE
     const input = { foo: '  foo ', bar: 'bar ', baz: ' baz' }
     const expected = { foo: 'foo', bar: 'bar', baz: 'baz' }
     const actual = utils.trimProperties(input)
     expect(actual).toEqual(expected)
   })
-  // test('[2] returns a copy, leaving the original object intact', () => {})
+  it('[2] returns a copy, leaving the original object intact', () => {
+
+    const input = { foo: '  foo ', bar: 'bar ', baz: ' baz' }
+    const expected = { foo: 'foo', bar: 'bar', baz: 'baz' }
+    const actual = utils.trimProperties(input)
+    expect(expected).toMatchObject(actual)
+    expect(actual).toEqual(expected)
+  })
 })
 
 describe('[Exercise 2] trimPropertiesMutation', () => {
-  // test('[3] returns an object with the properties trimmed', () => {})
-  // test('[4] the object returned is the exact same one we passed in', () => {})
+   it('[3] returns an object with the properties trimmed', () => {
+
+    const input = { foo: '  foo ', bar: 'bar ', baz: ' baz' }
+    const expected = { foo: 'foo', bar: 'bar', baz: 'baz' }
+    const actual = utils.trimProperties(input)
+    expect(input).toEqual(input)
+    expect(actual).toEqual(expected)
+   })
+   
+   it('[4] the object returned is the exact same one we passed in', () => {
+
+    const input = { foo: '  foo ', bar: 'bar ', baz: ' baz' }
+    const expected = { foo: 'foo', bar: 'bar', baz: 'baz' }
+    const actual = utils.trimProperties(input)
+    expect(actual).toStrictEqual(expected)
+   })
 })
 
 describe('[Exercise 3] findLargestInteger', () => {
