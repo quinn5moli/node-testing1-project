@@ -38,7 +38,13 @@ describe('[Exercise 2] trimPropertiesMutation', () => {
 })
 
 describe('[Exercise 3] findLargestInteger', () => {
-  // test('[5] returns the largest number in an array of objects { integer: 2 }', () => {})
+   it('[5] returns the largest number in an array of objects { integer: 2 }', () => {
+
+    const input = [{ integer: 1 }, { integer: 3 }, { integer: 2 }]
+    const expected = 3;
+    const actual = utils.findLargestInteger(input)
+    expect(expected).toBe(actual)
+   })
 })
 
 describe('[Exercise 4] Counter', () => {
@@ -46,9 +52,23 @@ describe('[Exercise 4] Counter', () => {
   beforeEach(() => {
     counter = new utils.Counter(3) // each test must start with a fresh couter
   })
-  // test('[6] the FIRST CALL of counter.countDown returns the initial count', () => {})
-  // test('[7] the SECOND CALL of counter.countDown returns the initial count minus one', () => {})
-  // test('[8] the count eventually reaches zero but does not go below zero', () => {})
+   it('[6] the FIRST CALL of counter.countDown returns the initial count', () => {
+     const expected = 3;
+     const actual = counter.countDown()
+     expect(actual).toBe(expected)
+   })
+   it('[7] the SECOND CALL of counter.countDown returns the initial count minus one', () => {
+     counter.countDown()
+     expect(counter.countDown()).toBe(2)
+   })
+   it('[8] the count eventually reaches zero but does not go below zero', () => {
+     counter.countDown()
+     counter.countDown()
+     counter.countDown()
+     counter.countDown()
+     counter.countDown()
+     expect(counter.countDown()).toBe(0)
+   })
 })
 
 describe('[Exercise 5] Seasons', () => {
